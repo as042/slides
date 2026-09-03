@@ -71,8 +71,9 @@ colours are named accents (`sky`, `emerald`, `purple`, `amber`, `rose`,
 | | Occasion |
 | --- | --- |
 | `field-picker.html` | Target schema field picker &mdash; 206 candidate fields for SRA metadata enrichment, with prevalence, synonyms, overlaps and real example values. Not a deck; a standalone single-file tool, no build step |
+| `sra_metadata_schema_Sep_2026` | What should a record actually hold? &mdash; agreeing on a target schema across the three that disagree. Decision meeting, Sep 2026 |
 | `sra_metadata_rust_Sep_2026` | Filling the blanks in SRA metadata &mdash; the Rust reconstruction harness. Lab meeting, Sep 2026 |
 
 The decks inherited from the upstream `nekrut/slides` fork were removed; only
 Andrew's own material is kept. `deckkit/` stays, because it is the build system
-this deck compiles with rather than a deck of its own.
+the decks compile with rather than a deck of its own.
