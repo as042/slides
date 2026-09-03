@@ -66,10 +66,13 @@ visual belongs in `deckkit/themes/deckkit.css` so every deck inherits it — and
 colours are named accents (`sky`, `emerald`, `purple`, `amber`, `rose`,
 `indigo`, `slate`, `navy`), never hex.
 
-## Decks
+## Decks and tools
 
-| Deck | Occasion |
+| | Occasion |
 | --- | --- |
-| `asv2026` | American Society for Virology 2026 — BRC Analytics, Galaxy workflows, Orbit, Logan/LexicMap. 15 min |
-| `toolsfortomorrow_May_23_2026` | Andes Hantavirus glycoprotein selection analysis — BRC-Analytics / Datamonkey / HyPhy, May 2026 |
-| `paper_sra_linkage_Aug_2026` | Linking papers to the sequencing data they generated — ground truth for a metadata-prediction experiment. Lab meeting, Aug 2026 |
+| `field-picker.html` | Target schema field picker &mdash; 206 candidate fields for SRA metadata enrichment, with prevalence, synonyms, overlaps and real example values. Not a deck; a standalone single-file tool, no build step |
+| `sra_metadata_rust_Sep_2026` | Filling the blanks in SRA metadata &mdash; the Rust reconstruction harness. Lab meeting, Sep 2026 |
+
+The decks inherited from the upstream `nekrut/slides` fork were removed; only
+Andrew's own material is kept. `deckkit/` stays, because it is the build system
+this deck compiles with rather than a deck of its own.

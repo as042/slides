@@ -3,16 +3,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Slides — Anton Nekrutenko</title>
+<title>Slides — Andrew</title>
 <style>
   :root {
     --bg: #fafbfb; --surface: #fff; --line: #e2e8f0;
     --ink: #0b2545; --ink-2: #475569; --ink-3: #64748b; --accent: #0ea5e9;
+    --accent-2: #14b8a6;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #081321; --surface: #0e1e31; --line: #1d3350;
-            --ink: #e6eef7; --ink-2: #a0b5ca; --ink-3: #6b8299; --accent: #38bdf8; }
+            --ink: #e6eef7; --ink-2: #a0b5ca; --ink-3: #6b8299; --accent: #38bdf8;
+            --accent-2: #2dd4bf; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.55; }
@@ -26,9 +28,15 @@
     border-left: 4px solid var(--accent); border-radius: 8px; padding: 18px 22px;
     transition: transform .15s ease, box-shadow .15s ease;
   }
+  a.deck.tool { border-left-color: var(--accent-2); }
   a.deck:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -12px rgb(0 0 0 / 35%); }
   a.deck strong { display: block; font-size: 18px; letter-spacing: -0.01em; }
   a.deck span { color: var(--ink-3); font-size: 14px; }
+  .kind {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
+  }
+  a.deck.tool .kind { color: var(--accent-2); }
   footer { margin-top: 48px; color: var(--ink-3); font-size: 14px; }
   footer a { color: var(--accent); }
 </style>
@@ -36,55 +44,27 @@
 <body>
 <main>
   <h1>Slides</h1>
-  <p class="sub">Presentation decks by Anton Nekrutenko, built with
-     <a href="https://github.com/nekrut/slides/tree/main/deckkit">deckkit</a>.</p>
+  <p class="sub">Presentation decks and tools by Andrew, built with
+     <a href="https://github.com/as042/slides/tree/main/deckkit">deckkit</a>.</p>
 
   <ul>
     <li>
-      <a class="deck" href="sra_metadata_rust_Sep_2026/">
-        <strong>Filling the blanks in SRA metadata</strong>
-        <span>September 2026 &middot; the Rust reconstruction harness &mdash; a four-layer cascade, computed groundings instead of self-reported ones, and what one configuration scores</span>
-      </a>
-
-      <a class="deck" href="sra_metadata_projects_Aug_2026/">
-        <strong>Ten projects to improve SRA metadata</strong>
-        <span>August 2026 &middot; candidate projects for enriching and correcting sequencing metadata &mdash; available data, method, cost, and the test that settles each one in a week</span>
-      </a>
-
-      <a class="deck" href="sra_metadata_analysis_Aug_2026/">
-        <strong>Paper &#8596; SRA linkage: analysis log</strong>
-        <span>August 2026 &middot; data volume per BioProject, an interactive taxonomy treemap, the ENA field inventory, and whether paper-linked records are better annotated</span>
-      </a>
-
-      <a class="deck" href="paper_sra_linkage_Aug_2026/">
-        <strong>Linking open-access papers to the datasets they produced</strong>
-        <span>August 2026 &middot; how the linkage table is built and validated &mdash; 164,848 generated paper&#8211;project pairs</span>
-      </a>
-
-      <a class="deck" href="icopa26/">
-        <strong>BRC-Analytics: combining agentic AI with open infrastructure for pathogen genomics</strong>
-        <span>ICOPA XVI, Montréal, August 2026 · BRC-Analytics, Galaxy, <em>Cyclospora</em> surveillance, Orbit, Logan</span>
-      </a>
-
-      <a class="deck" href="cyclospora_toolsfortomorrow_Aug_2026/">
-        <strong>Genomic Analytics for <em>Cyclospora</em> Outbreaks</strong>
-        <span>Tools for Tomorrow Webinar, August 2026 · 8-marker MLST, PyEuk, Galaxy, Logan/LexicMap</span>
-      </a>
-
-      <a class="deck" href="asv2026/">
-        <strong>BRC-Analytics: a free environment for analysis of viral data</strong>
-        <span>American Society for Virology 2026 · BRC-Analytics, Galaxy, Orbit, Logan</span>
+      <a class="deck tool" href="field-picker.html">
+        <span class="kind">Tool</span>
+        <strong>Target schema &mdash; field picker</strong>
+        <span>206 candidate fields for the SRA metadata target schema &mdash; ENA's full 195 plus 11 candidates ENA has no column for. Prevalence, synonyms, overlaps and real example values per field; click to keep or drop, then copy your selection to compare with someone else's</span>
       </a>
     </li>
     <li>
-      <a class="deck" href="toolsfortomorrow_May_23_2026/slides.html">
-        <strong>Real-Time Evolutionary Surveillance</strong>
-        <span>May 2026 · Andes hantavirus glycoprotein selection analysis</span>
+      <a class="deck" href="sra_metadata_rust_Sep_2026/">
+        <span class="kind">Deck</span>
+        <strong>Filling the blanks in SRA metadata</strong>
+        <span>September 2026 &middot; the Rust reconstruction harness &mdash; a four-layer cascade, computed groundings instead of self-reported ones, and what one configuration scores</span>
       </a>
     </li>
   </ul>
 
-  <footer>Source: <a href="https://github.com/nekrut/slides">github.com/nekrut/slides</a></footer>
+  <footer>Source: <a href="https://github.com/as042/slides">github.com/as042/slides</a></footer>
 </main>
 </body>
 </html>

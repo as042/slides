@@ -12,7 +12,7 @@ deckkit/bin/deck watch  mydeck/slides.md    # live preview
 deckkit/bin/deck new    mydeck              # scaffold a new deck
 ```
 
-Reference deck: `../toolsfortomorrow_May_23_2026/slides.md`.
+Reference deck: `../sra_metadata_rust_Sep_2026/slides.md`.
 
 ## Deck file skeleton
 

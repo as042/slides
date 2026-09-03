@@ -4,9 +4,7 @@ Source of truth: `slides.md` (deckkit format — see `../CLAUDE.md` and
 `../deckkit/README.md`).
 
 Build — **note this deck outputs `index.html`, not `slides.html`**, so the folder
-URL resolves on GitHub Pages without a redirect stub (the same choice
-`sra_metadata_analysis_Aug_2026` and `cyclospora_toolsfortomorrow_Aug_2026`
-made). `bin/deck build` hard-codes `-o slides.html` and passing a second `-o`
+URL resolves on GitHub Pages without a redirect stub. `bin/deck build` hard-codes `-o slides.html` and passing a second `-o`
 crashes marp-cli, so call marp directly:
 
 ```bash
