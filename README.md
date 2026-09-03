@@ -73,3 +73,4 @@ colours are named accents (`sky`, `emerald`, `purple`, `amber`, `rose`,
 | `asv2026` | American Society for Virology 2026 — BRC Analytics, Galaxy workflows, Orbit, Logan/LexicMap. 15 min |
 | `toolsfortomorrow_May_23_2026` | Andes Hantavirus glycoprotein selection analysis — BRC-Analytics / Datamonkey / HyPhy, May 2026 |
 | `paper_sra_linkage_Aug_2026` | Linking papers to the sequencing data they generated — ground truth for a metadata-prediction experiment. Lab meeting, Aug 2026 |
+| `sra_metadata_schema_Sep_2026` | Agreeing on a target schema — three schemas that disagree, run- versus experiment-level records, and which biological fields to add. Decision meeting, Sep 2026 |
