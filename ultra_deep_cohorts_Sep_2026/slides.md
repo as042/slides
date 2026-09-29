@@ -126,23 +126,12 @@ slow, meticulous analysis
 
 <!-- _class: compact middle -->
 
-# The Kmindex Pathway
+# Disassembler Pathways
 
-Kmindex is a tool for calculating the percentage of shared k-mers between a query and reference.
+The Disassembler package offers 3 main tools: **Logan-Walker**, **LexicMap-Streamer**, and **Sieve**.
 
-::: cards cols=1 gap=12px size=sm border=left
-### Query with a protein CDS {accent=emerald}
-
-Disassembler uses a protein coding sequence as a query and runs Kmindex to compare it against Logan's pre-computed Bloom filters.
-
-### Result {accent=sky}
-
-List of SRA accessions and their k-mer % identities to the query.
-
-### Downstream {accent=purple}
-
-Matching accessions → stream unitigs from AWS S3 → **Logan Walker** → MSA.
-:::
+```embed src="assets/pathways-diagram.html" w=1400px scale=0.80 h=520px
+```
 
 ---
 

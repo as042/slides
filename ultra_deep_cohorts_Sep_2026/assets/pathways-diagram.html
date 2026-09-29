@@ -1,0 +1,74 @@
+<style>
+  .pw-root {
+    position: relative;
+    width: 1400px;
+    height: 620px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+  .pw-node {
+    position: absolute;
+    background: #0b2545;
+    color: #fff;
+    border-radius: 18px;
+    padding: 18px 26px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.35);
+  }
+  .pw-node .pw-title { font-size: 34px; font-weight: 700; line-height: 1.15; }
+  .pw-node .pw-sub   { font-size: 19px; font-weight: 500; color: #cbd5e1; margin-top: 8px; line-height: 1.25; }
+
+  .pw-source { top: 20px;  left: 540px; width: 320px; background: #1e3a5f; }
+  .pw-walker { top: 250px; left: 100px; width: 420px; border: 4px solid #10b981; }
+  .pw-stream { top: 250px; left: 880px; width: 420px; border: 4px solid #8b5cf6; }
+  .pw-sink   { top: 500px; left: 540px; width: 320px; border: 4px solid #14b8a6; }
+
+  .pw-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  .pw-lbl { position: absolute; font-size: 28px; font-weight: 700; background: #fafbfb; padding: 2px 10px; border-radius: 6px; }
+  .pw-lbl.a { top: 145px; left: 230px; color: #059669; }
+  .pw-lbl.b { top: 145px; left: 1030px; color: #7c3aed; }
+</style>
+
+<div class="pw-root">
+  <svg class="pw-svg" viewBox="0 0 1400 620" preserveAspectRatio="none">
+    <defs>
+      <marker id="ah-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#10b981"/>
+      </marker>
+      <marker id="ah-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/>
+      </marker>
+      <marker id="ah-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+      </marker>
+    </defs>
+    <line x1="590" y1="130" x2="360" y2="245" stroke="#10b981" stroke-width="4" marker-end="url(#ah-a)"/>
+    <line x1="810" y1="130" x2="1040" y2="245" stroke="#8b5cf6" stroke-width="4" marker-end="url(#ah-b)"/>
+    <line x1="360" y1="355" x2="590" y2="495" stroke="#475569" stroke-width="4" marker-end="url(#ah-g)"/>
+    <line x1="1040" y1="355" x2="810" y2="495" stroke="#475569" stroke-width="4" marker-end="url(#ah-g)"/>
+  </svg>
+
+  <div class="pw-node pw-source">
+    <div class="pw-title">Logan on AWS S3</div>
+    <div class="pw-sub">unitigs + contigs</div>
+  </div>
+
+  <div class="pw-lbl a">Kmindex</div>
+  <div class="pw-lbl b">LexicMap</div>
+
+  <div class="pw-node pw-walker">
+    <div class="pw-title">Logan-Walker</div>
+    <div class="pw-sub">unitigs → CSR graph → haplotype</div>
+  </div>
+
+  <div class="pw-node pw-stream">
+    <div class="pw-title">LexicMap-Streamer</div>
+    <div class="pw-sub">contigs → tiled alignments</div>
+  </div>
+
+  <div class="pw-node pw-sink">
+    <div class="pw-title">Sieve</div>
+    <div class="pw-sub">MSA ready for HyphAeon</div>
+  </div>
+</div>
