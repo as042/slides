@@ -88,6 +88,7 @@ HyphAeon is a small neural network that can recognize patterns in codons thousan
 +++
 
 ::: figure src="assets/hyphaeon-logo.png" h=340px bare
+Pre-print: [biorxiv.org/content/10.64898/2026.09.06.749597v1](https://www.biorxiv.org/content/10.64898/2026.09.06.749597v1)
 :::
 :::
 
