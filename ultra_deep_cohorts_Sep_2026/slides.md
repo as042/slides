@@ -7,7 +7,7 @@ header: 'Ultra-Deep Cohorts for Planetary Scale Evolution'
 footer: 'Logan · Disassembler · HyphAeon • September 2026'
 ---
 
-<!-- 13 slides. Converted 1:1 from the source .pptx draft — see CLAUDE.md. -->
+<!-- 12 slides: 10 main + 2 supplementary workflow slides at the end. -->
 
 <!-- _class: title -->
 
@@ -148,64 +148,16 @@ Matching accessions → stream unitigs from AWS S3 → **Logan Walker** → MSA.
 
 <!-- _class: compact middle -->
 
-# Logan Walker
-
-::: figure src="assets/logan-walker-pipeline.png" h=280px bare
-:::
-
-- Unitigs are parsed into a **Compressed Sparse Row (CSR)** graph
-- "Anchor" regions are identified by additional k-mer matching of query
-- Subgraphs are made by expanding out from anchors and then are aligned by **GraphAligner**
-- A legitimate path through the alignment is stitched together to make a haplotype
-
----
-
-<!-- _class: compact middle -->
-
-# The LexicMap Pathway
-
-::: figure src="assets/lexicmap-pipeline.png" h=280px bare
-:::
-
-- LexicMap goes straight for the alignments
-- **contigs** vs. **unitigs**
-
----
-
-<!-- _class: compact middle -->
-
-# Disassembler is not an Assembler
-
-::: cards cols=2 gap=18px border=left size=sm
-### Assembly is about compressing {accent=slate}
-
-Reads → Unitigs → Contigs. Logan has done this for us already.
-
-### Disassembler goes backwards {accent=sky}
-
-Takes these pre-assembled intermediates and tries to find the information that gets hidden in the usual compression steps.
-
-### Assemblers do not have a general target {accent=amber}
-
-### Disassembler constructs everything based on the query sequence {accent=purple}
-:::
-
-::: callout title="Result" accent=emerald slim
-Pre-computed, searchable Logan sequences → realistic haplotypes per accession that can be aligned and analyzed via HyphAeon.
-:::
-
----
-
-<!-- _class: compact middle -->
-
 # SARS-CoV-2 Spike Protein Case Study
 
 Kmindex pathway was tested via 11-strain panel of Covid spike CDS. Goal was to develop intuition regarding the kmer identity percentage.
 
-::: figure src="assets/kmer-identity-panel.png" h=300px bare
+::: cols ratio="1.35fr 1fr" gap=24px
+::: figure src="assets/kmer-identity-panel.png" h=500px bare
 :::
-
-::: figure src="assets/reconstructed-coverage.png" h=180px bare
++++
+::: figure src="assets/reconstructed-coverage-cropped.jpeg" h=500px bare
+:::
 :::
 
 ---
@@ -254,3 +206,29 @@ e.g. HIV
 ::: figure src="assets/pasteur.png" h=70px bare
 :::
 :::
+
+---
+
+<!-- _class: compact middle -->
+
+# Logan Walker
+
+::: figure src="assets/logan-walker-pipeline.png" h=280px bare
+:::
+
+- Unitigs are parsed into a **Compressed Sparse Row (CSR)** graph
+- "Anchor" regions are identified by additional k-mer matching of query
+- Subgraphs are made by expanding out from anchors and then are aligned by **GraphAligner**
+- A legitimate path through the alignment is stitched together to make a haplotype
+
+---
+
+<!-- _class: compact middle -->
+
+# The LexicMap Pathway
+
+::: figure src="assets/lexicmap-pipeline.png" h=280px bare
+:::
+
+- LexicMap goes straight for the alignments
+- **contigs** vs. **unitigs**
