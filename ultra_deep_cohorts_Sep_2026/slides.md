@@ -175,7 +175,15 @@ Kmindex pathway was tested via 11-strain panel of Covid spike CDS. Goal was to d
 
 # SARS-CoV-2 LexicMap RBD Case Study — Map
 
-::: figure src="assets/rbd-msa-map.png" h=560px bare
+::: cols ratio="0.30fr 0.70fr" gap=24px
+::: note accent=sky
+**SARS-CoV-2 RBD haplotype MSA**
+
+20,483 sieved sequences vs Wuhan Hu-1.
+:::
++++
+::: figure src="assets/rbd-msa-map.jpeg" h=515px bare
+:::
 :::
 
 ---
