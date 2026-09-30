@@ -78,27 +78,41 @@
   }
   .pw-node {
     position: absolute;
-    background: #0b2545;
-    color: #fff;
     border-radius: 18px;
     padding: 18px 26px;
     text-align: center;
     box-sizing: border-box;
-    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.35);
   }
-  .pw-node .pw-title { font-size: 34px; font-weight: 700; line-height: 1.15; }
-  .pw-node .pw-sub   { font-size: 19px; font-weight: 500; color: #cbd5e1; margin-top: 8px; line-height: 1.25; }
+  .pw-node .pw-title { font-size: 32px; font-weight: 700; line-height: 1.15; }
+  .pw-node .pw-sub   { font-size: 19px; font-weight: 500; margin-top: 8px; line-height: 1.25; }
 
-  .pw-source { top: 20px;  left: 540px; width: 320px; background: #1e3a5f; }
-  .pw-walker { top: 250px; left: 100px; width: 420px; border: 4px solid #10b981; }
-  .pw-stream { top: 250px; left: 880px; width: 420px; border: 4px solid #8b5cf6; }
-  .pw-sink   { top: 500px; left: 540px; width: 320px; border: 4px solid #14b8a6; }
+  /* the three Disassembler tools */
+  .pw-tool { background: #0b2545; color: #fff; box-shadow: 0 8px 24px -8px rgba(0,0,0,0.35); }
+  .pw-tool .pw-sub { color: #cbd5e1; }
+  /* everything outside the package */
+  .pw-ext { background: #fff; color: #0b2545; border: 3px solid #94a3b8; box-shadow: 0 4px 14px -8px rgba(0,0,0,0.25); }
+  .pw-ext .pw-sub { color: #475569; }
+
+  .pw-kmindex { top: 20px;  left: 110px;  width: 300px; }
+  .pw-source  { top: 20px;  left: 510px;  width: 340px; }
+  .pw-lexic   { top: 20px;  left: 960px;  width: 300px; }
+  .pw-walker  { top: 255px; left: 70px;   width: 420px; border: 4px solid #10b981; }
+  .pw-stream  { top: 255px; left: 900px;  width: 420px; border: 4px solid #8b5cf6; }
+  .pw-sieve   { top: 495px; left: 540px;  width: 320px; border: 4px solid #14b8a6; }
+  .pw-sink    { top: 495px; left: 1000px; width: 240px; }
 
   .pw-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
-  .pw-lbl { position: absolute; font-size: 28px; font-weight: 700; background: #fafbfb; padding: 2px 10px; border-radius: 6px; }
-  .pw-lbl.a { top: 145px; left: 230px; color: #059669; }
-  .pw-lbl.b { top: 145px; left: 1030px; color: #7c3aed; }
+  .pw-lbl { position: absolute; font-size: 21px; font-weight: 700; background: #fafbfb; padding: 1px 8px; border-radius: 6px; white-space: nowrap; }
+  .pw-lbl.a { color: #059669; }
+  .pw-lbl.b { color: #7c3aed; }
+  .pw-lbl.g { color: #475569; }
+
+  .pw-legend { position: absolute; top: 530px; left: 90px; font-size: 19px; font-weight: 600; color: #475569; }
+  .pw-legend div { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .pw-legend span { display: inline-block; width: 30px; height: 20px; border-radius: 6px; box-sizing: border-box; }
+  .pw-legend .sw-tool { background: #0b2545; border: 3px solid #14b8a6; }
+  .pw-legend .sw-ext  { background: #fff; border: 3px solid #94a3b8; }
 </style>
 
 <div class="pw-root">
@@ -114,33 +128,64 @@
         <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
       </marker>
     </defs>
-    <line x1="590" y1="130" x2="360" y2="245" stroke="#10b981" stroke-width="4" marker-end="url(#ah-a)"/>
-    <line x1="810" y1="130" x2="1040" y2="245" stroke="#8b5cf6" stroke-width="4" marker-end="url(#ah-b)"/>
-    <line x1="360" y1="355" x2="590" y2="495" stroke="#475569" stroke-width="4" marker-end="url(#ah-g)"/>
-    <line x1="1040" y1="355" x2="810" y2="495" stroke="#475569" stroke-width="4" marker-end="url(#ah-g)"/>
+    <!-- Kmindex pathway -->
+    <line x1="260" y1="136" x2="260" y2="250" stroke="#10b981" stroke-width="4" marker-end="url(#ah-a)"/>
+    <line x1="560" y1="136" x2="450" y2="250" stroke="#10b981" stroke-width="4" marker-end="url(#ah-a)"/>
+    <line x1="400" y1="371" x2="600" y2="490" stroke="#10b981" stroke-width="4" marker-end="url(#ah-a)"/>
+    <!-- LexicMap pathway -->
+    <line x1="852" y1="76" x2="955" y2="76" stroke="#8b5cf6" stroke-width="4" marker-end="url(#ah-b)"/>
+    <line x1="1110" y1="136" x2="1110" y2="250" stroke="#8b5cf6" stroke-width="4" marker-end="url(#ah-b)"/>
+    <line x1="1000" y1="371" x2="800" y2="490" stroke="#8b5cf6" stroke-width="4" marker-end="url(#ah-b)"/>
+    <!-- shared -->
+    <line x1="862" y1="551" x2="995" y2="551" stroke="#475569" stroke-width="4" marker-end="url(#ah-g)"/>
   </svg>
 
-  <div class="pw-node pw-source">
+  <div class="pw-node pw-ext pw-kmindex">
+    <div class="pw-title">Kmindex</div>
+    <div class="pw-sub">k-mer search</div>
+  </div>
+
+  <div class="pw-node pw-ext pw-source">
     <div class="pw-title">Logan on AWS S3</div>
     <div class="pw-sub">unitigs + contigs</div>
   </div>
 
-  <div class="pw-lbl a">Kmindex</div>
-  <div class="pw-lbl b">LexicMap</div>
+  <div class="pw-node pw-ext pw-lexic">
+    <div class="pw-title">LexicMap</div>
+    <div class="pw-sub">alignment search</div>
+  </div>
 
-  <div class="pw-node pw-walker">
+  <div class="pw-lbl a" style="top: 176px; left: 272px;">accessions</div>
+  <div class="pw-lbl a" style="top: 180px; left: 528px;">unitigs</div>
+  <div class="pw-lbl b" style="top: 30px;  left: 862px;">contigs</div>
+  <div class="pw-lbl b" style="top: 176px; left: 1122px;">alignments</div>
+  <div class="pw-lbl a" style="top: 392px; left: 512px;">haplotypes</div>
+  <div class="pw-lbl b" style="top: 392px; left: 770px;">haplotypes</div>
+  <div class="pw-lbl g" style="top: 508px; left: 900px;">MSA</div>
+
+  <div class="pw-node pw-tool pw-walker">
     <div class="pw-title">Logan-Walker</div>
-    <div class="pw-sub">unitigs → CSR graph → haplotype</div>
+    <div class="pw-sub">haplotype reconstruction</div>
   </div>
 
-  <div class="pw-node pw-stream">
+  <div class="pw-node pw-tool pw-stream">
     <div class="pw-title">LexicMap-Streamer</div>
-    <div class="pw-sub">contigs → tiled alignments</div>
+    <div class="pw-sub">alignment tiling + QC</div>
   </div>
 
-  <div class="pw-node pw-sink">
+  <div class="pw-node pw-tool pw-sieve">
     <div class="pw-title">Sieve</div>
-    <div class="pw-sub">MSA ready for HyphAeon</div>
+    <div class="pw-sub">optional diversity thinning</div>
+  </div>
+
+  <div class="pw-node pw-ext pw-sink">
+    <div class="pw-title">HyphAeon</div>
+    <div class="pw-sub">selection analysis</div>
+  </div>
+
+  <div class="pw-legend">
+    <div><span class="sw-tool"></span>Disassembler tool</div>
+    <div><span class="sw-ext"></span>External</div>
   </div>
 </div>
 </div></div><footer>Logan · Disassembler · HyphAeon • September 2026</footer>
